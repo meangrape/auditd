@@ -232,9 +232,12 @@
 -w /etc/postfix/ -p wa -k mail
 -w /etc/exim4/ -p wa -k mail
 
-## SSH configuration
--w /etc/ssh/sshd_config -k sshd
--w /etc/ssh/sshd_config.d -k sshd
+## SSH
+-w /etc/ssh/sshd_config -k ssh
+-w /etc/ssh/sshd_config.d -k ssh
+-w /etc/ssh/authorized_keys -k ssh
+-w /usr/sbin/sshd -p xo -k ssh
+-w /usr/bin/ssh -p x -k ssh
 
 ## root ssh key tampering
 -w /root/.ssh -p wa -k rootkey
